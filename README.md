@@ -11,11 +11,11 @@
 </p>
 
 <p align="center">
-  <a href="https://t.me/SAITO_LORD">
+  <a href="https://t.me/Jeherul0069">
     <img src="https://img.shields.io/badge/Telegram-SAITO_LORD-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
   </a>
 
-  <a href="https://saito_ax">
+  <a href="https://">
     <img src="https://img.shields.io/badge/Website-saitoxakane.ea-black?style=for-the-badge&logo=google-chrome&logoColor=white">
   </a>
 </p>
@@ -188,7 +188,7 @@ sudo supervisorctl restart fflike
 # 📌 API ENDPOINT
 
 ```bash
-GET /like?uid={uid}&server_name={region}
+GET /like?uid=3010657822&region=ind&key=yourkey
 ```
 
 ---
@@ -196,7 +196,7 @@ GET /like?uid={uid}&server_name={region}
 # ✅ EXAMPLE REQUEST
 
 ```bash
-https://your-domain.com/like?uid=1727611045&server_name=IND
+https://your-domain.com/like?uid=3010657822&region=ind&key=yourkey
 ```
 
 ---
@@ -205,11 +205,11 @@ https://your-domain.com/like?uid=1727611045&server_name=IND
 
 ```json
 {
-  "LikesGivenByAPI": 100,
-  "LikesafterCommand": 14700,
-  "LikesbeforeCommand": 160,
-  "PlayerNickname": "SAITO AE",
-  "UID": 123456789,
+  "LikesGivenByAPI": 99,
+  "LikesafterCommand": 199,
+  "LikesbeforeCommand": 100,
+  "PlayerNickname": "Jeherul 07",
+  "UID": 301657822",
   "status": 1
 }
 ```
@@ -266,7 +266,7 @@ THIS API USES:
 ## 📢 TELEGRAM
 
 <p align="left">
-  <a href="https://t.me/saito_ae">
+  <a href="https://t.me/jeherul0069">
     <img src="https://img.shields.io/badge/Telegram-SAITO_LORD-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white">
   </a>
 </p>
@@ -274,7 +274,7 @@ THIS API USES:
 ## 🌐 WEBSITE
 
 <p align="left">
-  <a href="https://saito_like_ea">
+  <a href="https://jeherul0069">
     <img src="https://img.shields.io/badge/Website-saitoxakane.ea-black?style=for-the-badge&logo=google-chrome&logoColor=white">
   </a>
 </p>
@@ -283,7 +283,7 @@ THIS API USES:
 
 # 🌐 OFFICIAL WEBSITE
 
-https://saitolike.lovable.app/
+OFLINE SESSION START
 
 ---
 
