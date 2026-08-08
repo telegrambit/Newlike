@@ -1,4 +1,4 @@
-# 🚀 FREE FIRE LIKE API
+# 🚀 THE KING OF ARENA
 
 <p align="center">
   <img src="./logo.jpg" width="140" alt="SAITO AX Logo">
