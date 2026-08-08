@@ -1,13 +1,13 @@
 # 🚀 FREE FIRE LIKE API
 
 <p align="center">
-  <img src="./logo.png" width="140" alt="SAITO AX Logo">
+  <img src="./logo.jpg" width="140" alt="SAITO AX Logo">
 </p>
 
-<h1 align="center">SAITO FREE FIRE LIKE API</h1>
+<h1 align="center">I AM THE FINAL BOSS</h1>
 
 <p align="center">
-  ⚡ ULTRA FAST ASYNC LIKE API USING FLASK + AES + PROTOBUF
+  ⚡ ULTRA FAST ASYNC FINAL BOSS USING FLASK + AES + PROTOBUF
 </p>
 
 <p align="center">
