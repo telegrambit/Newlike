@@ -23,6 +23,38 @@ VALID_API_KEYS = {
 daily_limit = 300
 used_count = 0
 
+# Free Fire endpoints for the current release.
+REGION_CONFIG = {
+    "IND": {
+        "client_url": "https://client.ind.freefiremobile.com/",
+        "server_url": "https://loginbp.ppmainecoonghj.com/",
+        "release_version": "OB55",
+        "client_version": "1.132.3",
+    },
+    "AMERICA": {
+        "client_url": "https://client.us.freefiremobile.com/",
+        "server_url": "https://loginbp.ppmainecoonghj.com/",
+        "release_version": "OB55",
+        "client_version": "1.132.3",
+    },
+    "OTHERS": {
+        "client_url": "https://clientbp.ppmainecoonghj.com/",
+        "server_url": "https://loginbp.ppmainecoonghj.com/",
+        "release_version": "OB55",
+        "client_version": "1.132.3",
+    },
+}
+AMERICA_REGIONS = {"BR", "US", "SAC", "NA"}
+
+
+def client_base_url(region):
+    """Return the current client base URL for a supported region."""
+    if region == "IND":
+        return REGION_CONFIG["IND"]["client_url"].rstrip("/")
+    if region in AMERICA_REGIONS:
+        return REGION_CONFIG["AMERICA"]["client_url"].rstrip("/")
+    return REGION_CONFIG["OTHERS"]["client_url"].rstrip("/")
+
 
 def load_tokens(region):
     try:
@@ -77,7 +109,7 @@ async def send_request(encrypted_uid, token, url):
             "Expect": "100-continue",
             "X-Unity-Version": "2018.4.11f1",
             "X-GA": "v1 1",
-            "ReleaseVersion": "OB54"
+            "ReleaseVersion": "OB55"
         }
         async with aiohttp.ClientSession() as session:
             async with session.post(url, data=edata, headers=headers) as response:
@@ -129,12 +161,7 @@ def enc(uid):
 
 def make_request(encrypt, region, token):
     try:
-        if region == "IND":
-            url = "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
-        elif region in {"BR", "US", "SAC", "NA"}:
-            url = "https://client.us.freefiremobile.com/GetPlayerPersonalShow"
-        else:
-            url = "https://clientbp.ggpolarbear.com/GetPlayerPersonalShow"
+        url = f"{client_base_url(region)}/GetPlayerPersonalShow"
         edata = bytes.fromhex(encrypt)
         headers = {
             "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; ASUS_Z01QD Build/PI)",
@@ -145,7 +172,7 @@ def make_request(encrypt, region, token):
             "Expect": "100-continue",
             "X-Unity-Version": "2018.4.11f1",
             "X-GA": "v1 1",
-            "ReleaseVersion": "OB54"
+            "ReleaseVersion": "OB55"
         }
         response = requests.post(url, data=edata, headers=headers, verify=False)
         binary = response.content
@@ -198,12 +225,7 @@ def handle_requests():
                 raise Exception("Failed to get initial info.")
             before_like = before.AccountInfo.Likes
 
-            if region == "IND":
-                url = "https://client.ind.freefiremobile.com/LikeProfile"
-            elif region in {"BR", "US", "SAC", "NA"}:
-                url = "https://client.us.freefiremobile.com/LikeProfile"
-            else:
-                url = "https://clientbp.ggpolarbear.com/LikeProfile"
+            url = f"{client_base_url(region)}/LikeProfile"
 
             asyncio.run(send_multiple_requests(uid, region, url))
 
