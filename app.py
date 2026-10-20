@@ -2,15 +2,13 @@ from flask import Flask, request, jsonify
 import asyncio
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
+from google.protobuf.json_format import MessageToJson
 import binascii
 import aiohttp
 import requests
 import json
-import like_pb2
-import uid_generator_pb2
-import visit_count_pb2
-from google.protobuf.message import DecodeError
-from collections import OrderedDict
+import os
+import FlashLikeCount_pb2
 import random
 
 app = Flask(__name__)
@@ -113,7 +111,7 @@ def enc(uid):
 
 def decode_protobuf(binary):
     try:
-        items = uid_generator_pb2.Info()
+        items = FlashLikeCount_pb2.Info()
         items.ParseFromString(binary)
         return items
     except Exception:
