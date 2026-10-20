@@ -113,7 +113,7 @@ def enc(uid):
 
 def decode_protobuf(binary):
     try:
-        items = FlashLikeCount_pb2.Info()
+        items = uid_generator_pb2.Info()
         items.ParseFromString(binary)
         return items
     except Exception:
